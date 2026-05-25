@@ -24,7 +24,7 @@ The dataset consists of two primary data streams alongside the annotation file.
 
 ## Annotation Format
 
-The annotations adhere to the industry-standard COCO 17-keypoint skeletal format, encompassing the nose, eyes, ears, shoulders, elbows, wrists, hips, knees, and ankles. Bounding box parameters are included in the JSON and were automatically generated to provide a standardized detection window.
+The annotations adhere to the industry-standard COCO 17-keypoint skeletal format, encompassing the nose, eyes, ears, shoulders, elbows, wrists, hips, knees, and ankles. Bounding box parameters are included in the JSON and were automatically generated using an object detection framework to provide a standardized detection window. **Please note that because these bounding boxes were generated automatically, they were not manually corrected and may contain errors.**
 
 To systematically handle the severe occlusions common in bouldering, the standard COCO schema was adapted to include a custom four-tier occlusion protocol:
 
