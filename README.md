@@ -37,4 +37,4 @@ To systematically handle the severe occlusions common in bouldering, the standar
 
 The `annotations.json` file is available directly in this repository. To download the accompanying `videos/` and `frames/` directories, please access the externally provided dataset here: 
 
-**[Insert Link to External Cloud Storage Here]**
+**https://drive.google.com/file/d/1ByZAg9vDXrD6SGtoKXWOckkMjezaBWA2/view?usp=sharing**
