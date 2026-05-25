@@ -51,7 +51,7 @@ This script loads the converted `.npz` ground truth and prediction files to calc
 *Note: Before running this script, you must update the `--- CONFIGURATION ---` block at the top of the file to point to your local data directories.*
 
 ```bash
-python evaluate_dataset_release.py
+python evaluate_dataset.py
 ```
 
 ## Data Access
