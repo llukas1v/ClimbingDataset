@@ -33,6 +33,27 @@ To systematically handle the severe occlusions common in bouldering, the standar
 * **`1` (Low-Confidence Approximation):** The joint is heavily obscured, and its spatial location is estimated with a lower degree of confidence based on general biomechanical posture.
 * **`0` (Unannotated):** The joint is entirely hidden and cannot be reasonably deduced; these are intentionally omitted to prevent speculative guessing.
 
+## Evaluation Framework
+
+This repository includes the custom Python evaluation pipeline used to benchmark models against this dataset. Because standard COCO evaluation tools cannot natively parse the custom four-tier visibility flags, the script maps them to standard COCO formatting to calculate Average Precision (AP) and related metrics. Specifically, custom visibility `3` (High-Confidence Approximation) and visibility `1` (Low-Confidence Approximation) are both mapped to standard COCO visibility `1` (labeled but not visible). Visibility `0` remains `0` to ensure completely hidden joints are omitted from evaluation penalties.
+
+The evaluation is executed in a two-step pipeline:
+### 1. Data Preparation (`create_npz_files.py`)
+The evaluation script requires data in a dense temporal format rather than sparse JSON dictionaries. This script converts the sparse 1 fps COCO JSON annotations into 20 fps `.npz` arrays, padding unannotated frames with zeros.
+
+```bash
+python create_npz_files.py --out-dir npz_output
+```
+
+### 2. Evaluation (`evaluate_dataset_release.py`)
+This script loads the converted `.npz` ground truth and prediction files to calculate AP, PCK, and AUC, outputting the results as LaTeX tables.
+
+*Note: Before running this script, you must update the `--- CONFIGURATION ---` block at the top of the file to point to your local data directories.*
+
+```bash
+python evaluate_dataset_release.py
+```
+
 ## Data Access
 
 The `annotations.json` file is available directly in this repository. To download the accompanying `videos/` and `frames/` directories, please access the externally provided dataset here: 
