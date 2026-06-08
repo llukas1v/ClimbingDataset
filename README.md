@@ -4,6 +4,8 @@ This repository contains the annotations and framework for a custom indoor bould
 
 Due to the size and format of the media, the raw video files and extracted image frames are hosted externally.
 
+**https://drive.google.com/file/d/1ByZAg9vDXrD6SGtoKXWOckkMjezaBWA2/view?usp=sharing**
+
 ## Dataset Overview
 
 The dataset encapsulates the unique biomechanical challenges of indoor bouldering, focusing heavily on extreme self-occlusion, inverted poses, clothing deformation, and the tracking of distal extremities on artificial holds. 
